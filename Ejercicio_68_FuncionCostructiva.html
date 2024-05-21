@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 68: Función Constructiva.</title>
+    
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //Creamos una función constructora para llamada "Persona" con los datos que vasmos a necesitar.
+        function Persona(dnis,name,surname,direction,cp,city,telefMovil,mail,fechNacim){
+            this.dni = dnis;
+            this.nombre = name;
+            this.apellidos = surname;
+            this.direccion = direction;
+            this.codigoPostal = cp;
+            this.ciudad= city;
+            this.telefonoMovil = telefMovil;
+            this.email= mail;
+            this.fechaNacimiento = fechNacim;
+            this.detalle = function(){console.log(`${this.nombre} ${this.apellidos} nacido en ${this.fechaNacimiento} con DNI ${this.dni}. 
+            Vive en: ${this.ciudad} Codigo Postal: ${this.codigoPostal} Dirección: ${this.direccion}.
+            CONTACTO: Telefono Móvil: ${this.telefonoMovil} | E-mail: ${this.email}`);};
+        }
+
+        //Creamos cada persona y le asignamos sus valores.
+        var persona1 = new Persona("36214292X", "Pepa", "López", "c/Calle Mayor nº1 3ºA", "42005", "Soria", "123 456 789", "pepalopez@gmial.com", "20/8/91");
+        var persona2 = new Persona("X5414735Y", "Caren", "Freca", "c/Calle Más Mayor nº5 2ºB", "28006", "Madrid", "987 654 321", "carenfreca@gmail.es", "31/10/75");
+        var persona3 = new Persona("W7060720E", "Lupe", "Trinidad", "c/Calle Rómpete el alma nº15", "15401", "Ferrol", "657 725 955", "lupetrini@hotmail.es", "1/4/1939");
+
+        //Vemos el "detalle" de cada persona.
+        console.log(persona1.detalle());
+        console.log(persona2.detalle());
+        console.log(persona3.detalle());
+
+    </script>
+</body>
+
+</html>

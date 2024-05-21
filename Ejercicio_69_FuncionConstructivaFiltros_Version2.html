@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 69: Funcion Costructiva</title>
+    
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //Creamos la función constructora
+        function Portatil(marca, modelo, procesador, ram, discoDuro, pantalla, tarjetaG, sistemaOp){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.procesador = procesador;
+            this.ram = ram;
+            this.discoDuro = discoDuro;
+            this.pantalla = pantalla;
+            this.tarjetaG = tarjetaG;
+            this.sistemaOp = sistemaOp;
+            this.informacion = function(){console.log(`Es un portatil de marca ${this.marca}, modelo ${this.modelo},
+            con procesador ${this.procesador}, ${this.ram}GB de RAM, un disco duro de ${this.discoDuro},
+            una pantalla de ${this.pantalla} pulgadas, una tarjeta gráfica ${this.tarjetaG} y con el Sitema Operativo ${this.sistemaOp}.`);};
+        }
+
+        //Creamos tres instancias de nustra función constructora
+        var portatil1 = new Portatil("Lenovo","IdeaPad 1 15AMN7","AMD Ryzen™ 5 7520U","64","512GB", "15.6", "MSI GeForce", "Windows 10");
+        var portatil2 = new Portatil("Acer","Aspire 3 A315-44P","AMD Ryzen™ 7 5700U","8","400GB", "14", "AMD Radeon", "Mac OS");
+        var portatil3 = new Portatil("HP","250 G9celeron 4500","Intel Celeron N4500","32","1TB", "15", "MSI GT", "Windows 7");
+
+        //Ver la invormación de cada pc:
+        
+        console.log(portatil1.informacion());
+        console.log(portatil2.informacion());
+        console.log(portatil3.informacion());
+
+        //Vamos a usar el "filter()" para filtrar los potatiles cuya RAM es superior o igual a 32
+        let portatiles = [portatil1, portatil2, portatil3];
+        /*
+        let portatilesMuchaRam = portatiles.filter(function(ordenador){return parseInt(ordenador.ram) >= 32;});
+        console.log(portatilesMuchaRam);
+
+        //Un "map()" que coja solo las marcas de cada portatil.
+        let portatilesMarcas = portatiles.map(function(ordenador){return ordenador.marca});
+        console.log(portatilesMarcas);
+
+        //Encontrar un portatil de 14 pulgadas con el "find()"
+        let portatilPulgadas = portatiles.find(function(ordenador){return ordenador.pantalla === "14";});
+        console.log(portatilPulgadas);
+*/
+        //Mostrar la información de todos los portátiles con el "forEach()"
+        portatiles.forEach(function(ordenador){console.log(ordenador);});
+        
+
+
+        //Eliminar el primer portatil del array con el "shift()".
+        let primerPortatileliminado = portatiles.shift();
+        console.log("Primer portatil eliminado: ",primerPortatileliminado);
+
+        //Añadir un portatil al PRINCIPIO del array con "unshift()"
+        //Podemos añadir uno completamente nuevo o uno ya declarado.
+        let nuevoPortatil = new Portatil("Dell","Aspire 2 B763-73H","AMD Ryzen™ 8 6000U","8","200GB", "4", "NVIDIA", "Mac OS");
+        portatiles.unshift(portatil1);
+        portatiles.unshift(nuevoPortatil);
+        console.log("Nuevos portatiles añadido al principio: ",portatiles);
+
+        //Eliminar el último portatil con "pop()"
+        let ultimoPortatilEliminado = portatiles.pop();
+        console.log("Ultimo portatil eliminado: ",ultimoPortatilEliminado);
+
+        //Añadir un nuevo portatil al FINAL con "push()"
+        portatiles.push(portatil3);
+        console.log("Nuevo portatil añadido al final: ",portatiles);
+
+        //Buscar el índice del portatil de marca "X" con:
+        //El "indexOf()" no funciona con objetos así que devolverá un "-1", un falso positivo
+        //var indicePortatil = portatiles.indexOf(portatiles.marca === "Acer");
+        //Para objetos hay que usar el "findIndex()"
+        let indicePortatil = portatiles.findIndex(portatil => portatil.marca === "Acer");
+        console.log("El índice del portatil de marca Acer es: ", indicePortatil);
+
+        //Verificar si almenos hay 1 portatail con tarjeta gráfica NVIDIA con "some()"
+        let exsistePortatil = portatiles.some(portatil => portatil.tarjetaG === "NVIDIA");
+        console.log("¿Hay un portatil con tarjeta Gráfica NVIDIA?", exsistePortatil);
+        //Verificar todo en una sola línea sin necesidad de crear variable
+        console.log(portatiles.some(portatil => portatil.tarjetaG.includes("NVIDIA")));
+
+        //Eliminar el segundo portatil del array con "splice()"
+        portatiles.splice(2,1);
+        console.log("Se ha eliminado el portatil de la posición 2", portatiles);
+
+        //Agregar un portatil en la segunda posición con "slipce()"
+        portatiles.splice(2,0,portatil2);
+        console.log("Se ha añadido un portatil en la posición 2", portatiles);
+    </script>
+</body>
+
+</html>

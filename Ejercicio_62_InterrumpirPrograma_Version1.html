@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 62: Duplicar Numero</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Duplicar un Número</h1><br/>
+
+    <p>Introduzca un número positivo para calcular el doble.</p>
+    <p>Si el número es negativo e interrumpe el programa.</p>
+    <p>Si se introduce un 0 finaliza el programa.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero"><br/>
+    <button id="botonDuplicar" onclick="duplicarNumero()">Duplicar</button><br/><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+
+        function duplicarNumero(){
+            var numero = parseInt(document.getElementById("numero").value);
+            var mensaje = document.getElementById('mensaje');
+
+            //Vamos a forzar el ni de la función con un "return"
+            if(numero < 0){
+                alert("Se interrumpirá el programa.")
+                return;
+            } else if (numero === 0){
+
+                mensaje.innerHTML = "El programa ha finalizado."
+                return;
+
+            } else{
+                mensaje.innerHTML = "El doble del número introducido es: " + numero * 2;
+            }
+        }
+    </script>
+</body>
+
+</html>

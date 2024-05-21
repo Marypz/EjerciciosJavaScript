@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 64: Numero Factorial</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcular el Factorial</h1><br/>
+
+    <p>Introduce un número para calcular su factorial.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonCalcular" onclick="calcularNumero()">Calcular</button><br/><br/>
+
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+       
+       function calcularNumero(){
+            var numero = parseFloat(document.getElementById("numero").value);
+            var mensaje = document.getElementById("mensaje");
+            var factorial = 1;
+
+            if(numero <0){
+                mensaje.innerHTML = "Error, no se puede calcular con un número negativo.";
+            }
+            else if (numero == 0){
+                mensaje.innerHTML = "El fctorial de 0 es: " + factorial;
+            }
+            else{
+                for(let i = 1; i <= numero; i++){
+                    factorial *= i;
+                }
+                mensaje.innerHTML = "El factorial de " + numero + " es: " + factorial;
+            }
+            
+       }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 63: Bucle Infinito</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bucle Infinito</h1><br/>
+
+    <p>El programa seguirá piediendo números hasta que se escriba "salir" o "SALIR"</p>
+
+    <script type="text/javascript">
+       
+       //BUCLE INFINITO SIN SALIDA
+       /*var numero;
+       var contador = 0;
+        do{
+            numero = prompt("Introduce un número");
+
+        } while (contador === 0);*/
+
+        //BUCLE INFINITO CON SALIDA
+        var numero;
+
+        //Con el DO...WHILE
+        /*do{
+            numero = prompt("Introduce un número. Para finalizar escribe 'salir' o 'SALIR'");
+            
+            if(numero === "salir" || numero === "SALIR"){
+                alert("Fin del ciclo");
+                break;
+            }
+            //Añadimos la novedad de comprobar si se ha introducido un número.
+            //Usamos la negación de NaN -> !isNaN (NO is Not a Number) para comprobar si es un número.
+            //También nos aseguramos de transformar el número en int o float para hacer la comprobación.
+            if (!isNaN(parseInt(numero))){
+                alert("Numero introducido: " + numero);
+            }else{
+                alert("Porfavor introduce un número válido.")
+            }
+
+        }while(true);*/
+
+        //Con el WHILE
+
+        while(true){
+            numero = prompt("Introduce un número. Para finalizar escribe 'salir' o 'SALIR'");
+
+            if(numero === "salir" || numero === "SALIR"){
+                alert("Fin del ciclo");
+                break;
+            }
+            //Añadimos la novedad de comprobar si se ha introducido un número.
+            //Usamos la negación de NaN -> !isNaN (NO is Not a Number) para comprobar si es un número.
+            //También nos aseguramos de transformar el número en int o float para hacer la comprobación.
+            if (!isNaN(parseInt(numero))){
+                alert("Numero introducido: " + numero);
+            }else{
+                alert("Porfavor introduce un número válido.")
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

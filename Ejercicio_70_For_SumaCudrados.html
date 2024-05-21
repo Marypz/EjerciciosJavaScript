@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 70: Suma de Cuadrados de Números</title>
+    
+</head>
+
+<body>
+
+    <h1>Suma de Cuadrados de Números</h1>
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        const numbers = [5,4,8,6,2];
+        let suma = 0;
+
+        for(let i = 0; i < numbers.length; i++){
+            const number = numbers[i];
+            suma = suma + number **2;
+        }
+
+        console.log(suma);
+        document.getElementById('numeros').innerHTML = "Los números del array son: " + numbers;
+        document.getElementById("resultado").innerHTML = "La suma de los cuadrados es de: " + suma;
+
+
+    </script>
+</body>
+
+</html>

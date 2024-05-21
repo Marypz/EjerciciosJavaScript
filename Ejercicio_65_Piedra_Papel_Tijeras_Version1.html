@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 65: Piedra Papel o Tijera</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        h2{
+            font-weight:400;
+            margin-bottom: 0;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Piedra, Papel o Tijeras</h1><br/>
+
+    <h2>JUGADOR 1</h2><br/>
+    <button id="piedra1" onclick="opcion('piedra', 1)">Piedra</button>
+    <button id="papel1" onclick="opcion('papel', 1)">Papel</button>
+    <button id="tijera1" onclick="opcion('tijera', 1)">Tijera</button><br/>
+
+    <h2>JUGADOR 2</h2><br/>
+    <button id="piedra2" onclick="opcion('piedra', 2)">Piedra</button>
+    <button id="papel2" onclick="opcion('papel', 2)">Papel</button>
+    <button id="tijera2" onclick="opcion('tijera', 2)">Tijera</button><br/><br/>
+
+    <p id="mensaje"></p>
+
+    <script type="text/javascript">
+       
+        jugador1 = "";
+        jugador2 = "";
+
+        function opcion(opcion, jugador){
+
+            if (jugador === 1){
+                jugador1 = opcion;
+            }
+            else if (jugador === 2){
+                jugador2 = opcion;
+            }
+
+            revisarGanador(jugador1, jugador2);
+        }
+
+        function revisarGanador(jugador1, jugador2){
+
+            //CON IF
+            /*if (jugador1 === jugador2) {
+                document.getElementById("mensaje").innerHTML = "Empate";
+            } else if ( (jugador1 === "piedra" && jugador2 === "tijera") || (jugador1 === "papel" && jugador2 === "piedra") || (jugador1 === "tijera" && jugador2 === "papel")) {
+                document.getElementById("mensaje").innerHTML = "Gana el Jugador 1";
+            } else {
+                document.getElementById("mensaje").innerHTML = "Gana el Jugador 2";
+            }*/
+
+            //CON SWITCH
+            switch (true){
+                case jugador1 === jugador2:
+                    document.getElementById("mensaje").innerHTML = "Empate";
+                    break;
+                
+                case ((jugador1 === "piedra" && jugador2 === "tijera") || (jugador1 === "papel" && jugador2 === "piedra") || (jugador1 === "tijera" && jugador2 === "papel")):
+                    document.getElementById("mensaje").innerHTML = "Gana el Jugador 1";
+                    break;
+                
+                default:
+                    document.getElementById("mensaje").innerHTML = "Gana el Jugador 2";
+                    break;
+                
+            }
+        }
+       
+    </script>
+</body>
+
+</html>

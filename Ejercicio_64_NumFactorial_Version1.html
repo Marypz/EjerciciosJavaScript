@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 64: Numero Factorial</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calcular el Factorial</h1><br/>
+
+    <p>Introduce un número para calcular su factorial.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonCalcular" onclick="calcularNumero()">Calcular</button><br/><br/>
+
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+       
+       function calcularNumero(){
+            var numero = parseFloat(document.getElementById("numero").value);
+            var mensaje = document.getElementById("mensaje");
+
+            //var resultado = calcularFactorial(numero);
+            //mensaje.innerHTML = "Su factorial es " + resultado;
+
+            //Con comprobación de que contiene un número o no sea un numero negativo.
+            if (isNaN(numero)){
+                mensaje.innerHTML = "El valor introducido no es un número. Introduzca un valor válido.";
+            }
+            else if(numero < 0){
+                mensaje.innerHTML = "El valor introducido es negativo. Introduzca un valor válido.";
+                
+            }else{
+                var resultado = calcularFactorial(numero);
+                mensaje.innerHTML = "El factorial de " + numero + " es: " + resultado;
+            }
+       }
+
+       function calcularFactorial(num){
+
+            //Si el número es 0 o 1 su factorial es 1.
+            if(num == 0 || num == 1){
+                return 1;
+            }
+            /*Sino, se aplicará la formula para calcualr el factorial:
+                numero * nombreFunción(numero - 1)
+            */
+            else{
+                return num * calcularFactorial(num - 1);
+            }
+
+       }
+
+    </script>
+</body>
+
+</html>

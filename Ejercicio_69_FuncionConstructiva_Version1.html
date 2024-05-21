@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 69: Funcion Costructiva</title>
+    
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //Creamos la función constructora
+        function Portatil(marca, modelo, procesador, ram, discoDuro, pantalla, tarjetaG, sistemaOp){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.procesador = procesador;
+            this.ram = ram;
+            this.discoDuro = discoDuro;
+            this.pantalla = pantalla;
+            this.tarjetaG = tarjetaG;
+            this.sistemaOp = sistemaOp;
+            this.informacion = function(){console.log(`Es un portatil de marca ${this.marca}, modelo ${this.modelo},
+            con procesador ${this.procesador}, ${this.ram}GB de RAM, un disco duro de ${this.discoDuro},
+            una pantalla de ${this.pantalla} pulgadas, una tarjeta gráfica ${this.tarjetaG} y con el Sitema Operativo ${this.sistemaOp}.`);};
+        }
+
+        //Creamos tres instancias de nustra función constructora
+        var portatil1 = new Portatil("Lenovo","IdeaPad 1 15AMN7","AMD Ryzen™ 5 7520U","16","512GB", "15.6", "MSI GeForce RTX 4060", "Windows 10");
+        var portatil2 = new Portatil("Acer","Aspire 3 A315-44P","AMD Ryzen™ 7 5700U","8","400GB", "14", "AMD Radeon vega 7", "Mac OS");
+        var portatil3 = new Portatil("HP","250 G9celeron 4500","Intel Celeron N4500","32","1TB", "15", "MSI GT 1030 Aero ITX", "Windows 7");
+
+        //Ver la invormación de cada pc:
+        console.log(portatil1.informacion());
+        console.log(portatil2.informacion());
+        console.log(portatil3.informacion());
+
+    </script>
+</body>
+
+</html>

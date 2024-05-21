@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 65: Piedra Papel o Tijera</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        h2 {
+            font-weight: 400;
+            margin-bottom: 0;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Piedra, Papel o Tijeras</h1><br/>
+    <h2>JUGADOR 1</h2><br/>
+    <button id="piedra1" onclick="jugar('piedra')">Piedra</button>
+    <button id="papel1" onclick="jugar('papel')">Papel</button>
+    <button id="tijera1" onclick="jugar('tijera')">Tijera</button><br/>
+
+    <h2>JUGADOR 2</h2><br/>
+    <button id="piedra2" onclick="jugar('piedra', true)">Piedra</button>
+    <button id="papel2" onclick="jugar('papel', true)">Papel</button>
+    <button id="tijera2" onclick="jugar('tijera', true)">Tijera</button><br/><br/>
+
+    <p id="mensaje"></p>
+
+    <script type="text/javascript">
+        var jugador1 = "";
+        var jugador2 = "";
+
+        //Cuando se pulsa el botón llamará a la función "jugar" y le pasará unos valores.
+        function jugar(opcion, esJugador2 = false){
+            if(esJugador2){
+                jugador2 = opcion;
+            } else {
+                jugador1 = opcion;
+            }
+
+            //CON IF
+            /*if (jugador1 && jugador2){
+                //Creamos una variable que nos guarde el resultado a mostrar
+                var resultado = "";
+                //Comprobamos las elecciones de los jugadores a ver quien ganó
+                if(jugador1 === jugador2){
+                    resultado = "Empate";
+                } else if ((jugador1 === "piedra" && jugador2 === "tijera") || 
+                           (jugador1 === "papel" && jugador2 === "piedra") || 
+                           (jugador1 === "tijera" && jugador2 === "papel")){
+                    resultado = "Gana el Jugador 1";
+                } else{
+                    resultado = "Gana el Jugador 2";
+                }
+                //Mostramos quien ha ganado en panatalla
+                document.getElementById('mensaje').innerHTML = resultado;
+                //Reseteamos las elecciones de los jugadores.
+                jugador1= '';
+                jugador2= '';
+            }*/
+
+
+            //CON SWITCH
+            if (jugador1 && jugador2){
+                var resultado = "";
+                switch(true){
+                    case jugador1 === jugador2:
+                        resultado = "Empate";
+                        break;
+                    case (jugador1 === "piedra" && jugador2 === "tijera"):
+                    case (jugador1 === "papel" && jugador2 === "piedra"):
+                    case (jugador1 === "tijera" && jugador2 === "papel"):
+                        resultado = "Gana el Jugador 1";
+                        break;
+                    default: 
+                        resultado = "Gana el Jugador 2";
+                        break;
+                }
+                //Mostramos quien ha ganado en panatalla
+                document.getElementById('mensaje').innerHTML = resultado;
+                //Reseteamos las elecciones de los jugadores.
+                jugador1= '';
+                jugador2= '';
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
