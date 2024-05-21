@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 37: Sumar Dos Números</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Primero declaramos las variables a utilizar.
+        var numero1, numero2, resultado;
+
+        /*Con "prompt" pedimos al usuario los números mediante un mensaje tipo alerta que guardará los números en las variables creadas.
+            -De esta manera el número introducido se guarda como STRING (letras) NO COMO NÚMERO.
+        */
+        numero1 = prompt("Introduzca un número");
+        numero2 = prompt("Introduzca otro número");
+
+        //Aquí transformamos los "string" que contienen las variables "numero1" y "numero2" en numeros de verdad (int) con la función "Number()"
+        //Number() hace lo mismo que "parseInt()""
+        resultado = Number(numero1) + Number(numero2);
+        //resultado = parseInt(numero1) + parseInt(numero2);
+
+        alert("El resultado de la suma de " + numero1 + " y " + numero2 + " es: " + resultado);
+    </script>
+</body>
+
+</html>

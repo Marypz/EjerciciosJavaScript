@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 38: Sumar Dos Números</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Podemos declarar los numeros y asignarles la alerta a la vez.
+
+        /*Con "prompt" pedimos al usuario los números mediante un mensaje tipo alerta que guardará los números en las variables creadas.
+            -De esta manera el número introducido se guarda como STRING (letras) NO COMO NÚMERO.
+        */
+        var numero1 = prompt("Introduzca un número");
+        var numero2 = prompt("Introduzca otro número");
+
+        //Aquí mostramos el resultado sin la variable "resultado"
+        //Simplemente ponemos la conversión del ejercico anterior entre parentesis para que se nos sume y no nos muestre solo los dos numeros juntos.
+        alert("El resultado de la suma de " + numero1 + " y " + numero2 + " es: " + (Number(numero1) + Number(numero2)));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 34</title>
+    
+</head>
+
+<body>
+    <!--Versión 2-->
+    <button id="boton1">Haz click aqui</button>
+
+    <script>
+
+        /*En este script hemos combinado los dos elementos de la Versión 1, esto se puede hacer debido a que comparten el "document"*/
+
+        //Primero seleccionamos el botón mediente el "id" de botón.
+        //Luego le decimos al programa que "escuche" por clicks y cuando lo detecte que aplique la función.
+
+        /*Este caso hace que la función se realice SOLO al hacer click en el botón en lugar de cualquier parte del documento como la Version 1
+        esto oscurre ya que primero le hemos especificado que seleccione o "capture" el botón mediante su id*/
+        document.querySelector("#boton1").addEventListener("click", function() {
+            console.log("El usuario ha hecho clic en el botón.");
+        });;
+
+    </script>
+</body>
+
+</html>

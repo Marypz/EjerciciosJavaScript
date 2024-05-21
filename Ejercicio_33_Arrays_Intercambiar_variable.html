@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 33: Array Intercambiar Valores</title>
+
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        window.onload = function(){
+            crearLista();
+        }
+
+        
+        function crearLista(){
+            //Creamos la lista (array) y la variable
+            var nombres = ["Alisson" , "Álvaro" , "Félix" , "Irache" , "Javier" , "María" , "Mei" , "Orlando" , "Valeri" , "Yury", "Alejando"];
+            var intercambio = "";
+
+            //Mostramos la lista
+            document.write("<h1>Alumnos</h1>")
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br/>");
+            }
+
+            //Intercambiar elementos usando una variable.
+            intercambio = nombres[3];
+            nombres[3] = nombres[6];
+            nombres[6] = intercambio;
+            //Quitamos el nombre que guarda la variable.
+            intercambio = "";
+            
+            //Mostramos la lista
+            document.write("<h1>Alumnos</h1>")
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br/>");
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 32: Array Mutado</title>
+
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        window.onload = function(){
+            crearLista();
+        }
+
+        
+        function crearLista(){
+            //Usamos la base del ejercicio anterior.
+            var nombres = ["Alisson" , "Álvaro" , "Félix" , "Irache" , "Javier" , "María" , "Mei" , "Orlando" , "Valeri" , "Yury"];
+
+            document.write("<h1>Alumnos</h1>")
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br/>");
+            }
+            //Añadimos el nuevo nombre 
+            nombres.push("Alejandro");
+            //Creamos un espacio ya que vamos a mostrar las dos listas a la vez
+            document.write("<br/>");
+            //volvemos a hacer el bucle con el tamaño de la lista y que lo vuelva a mostrar en pantalla.
+            //Esta vez podemos observar que se añadirá un nombre extra al final de la lista.
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br>");
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

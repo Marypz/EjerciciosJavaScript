@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 30: Arrays</title>
+    
+</head>
+
+<body>
+    <script>
+
+        /*Declaramos un array con una variable cuyo valor empieze con []
+        los elementos se separan mediante comas (,)*/
+        var nombres = ["Alisson" , "Álvaro" , "Félix" , "Irache" , "Javier" , "María" , "Mei" , "Orlando" , "Valeri" , "Yury"];
+
+        //Mostramos el array en consola para ver sus elementos.
+        //En este caso vas a usar el "for" para hacer un bucle que pase por todos los elemntos (length) del array.
+        for (let i = 0; i < nombres.length; i++)
+        {
+            //alert("El nombre del alumno es: " + nombres[i]);
+            //prompt("Nombre: " + nombres[i]);
+            //console.log("El nombre es: " + nombres[i]);
+
+            //Para escribir en nuestra página web usamos el "document.write" para que escriba en la página web que está cargada (documento).
+            //Cabe destacar que a la hora de implementar elementos de HTML en Js hay que hacerlo entre comillas "".
+            document.write("Nombre: " + nombres[i] + "<br>");
+        }
+
+        //Podemos mirar de que tipo son loas arrays, en este caso "object".
+        //typeof (nombres);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 34</title>
+    
+</head>
+
+<body>
+    <!--Versión 1-->
+    <button id="boton1">Haz click aqui</button>
+
+    <script>
+        //Seleccionamos el documento actual, en este caso Ejercicio_34_Callbacks... (representado con "docuement")
+        //Le decimos que nos seleccione en específico el elemento llamado (por id)"boton1"
+        document.querySelector("#boton1");
+
+        //Le decimos al programa que añada un evento que "escuche" cuando se haga "click" y si se hace "click" que haga la función espeficicada.
+        //En este caso, el evento se realizará cuando se haga click en cualquier parte del documento debido a que no esta espeficicado el uso del evento a un elemento ene específico.
+        document.addEventListener("click", function() {
+            //Se muestra un menjase en la consola.
+            console.log("El usuario ha hecho clic en el botón.");
+        });
+
+    </script>
+</body>
+
+</html>

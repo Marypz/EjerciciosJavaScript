@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 34</title>
+    
+</head>
+
+<body>
+    <!--Versión 3-->
+    <button id="boton1">Haz click aqui</button>
+
+    <script>
+
+        /*Aquí hacemos lo mismo que en la versión 2, pero, en lugar de usar el documento 
+        usamos una variable para "guardar" la referencia del elemento capturado o buscado (en este caso el boton con id "buton1")*/
+        var boton = document.querySelector("boton1");
+
+        /*Le añadimos la "escucha" a la variable que equivaldría al elemento que hemos guardado antes.*/
+        boton.addEventListener("click", function() {
+            console.log("El usuario ha hecho clic en el botón.");
+        });
+
+    </script>
+</body>
+
+</html>

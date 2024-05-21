@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 33: Array Intercambiar Valores</title>
+
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        window.onload = function(){
+            crearLista();
+        }
+
+        
+        function crearLista(){
+            //Creamos la lista (array)
+            var nombres = ["Alisson" , "Álvaro" , "Félix" , "Irache" , "Javier" , "María" , "Mei" , "Orlando" , "Valeri" , "Yury", "Alejando"];
+
+            //Mostramos la lista
+            document.write("<h1>Alumnos</h1>")
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br/>");
+            }
+
+            //Intercambiar elementos usando un nuevo elemento del array.
+            //nombres[nombres.length -1] -> nombres[11]
+            //El último elemento sería el equivalente a la cantidad de todos los elementos - 1 porque los array empiezan el índice en 0 y no en 1
+            nombres.push("");
+            nombres[nombres.length -1] = nombres[3];
+            nombres[3] = nombres[6];
+            nombres[6] = nombres[nombres.length -1];
+            //Eliminamos la ultima posición que hemos creado para intercambiar elementos.
+            nombres.pop();
+            
+            //Mostramos la lista
+            document.write("<h1>Alumnos</h1>")
+            for (let i = 0; i < nombres.length; i++)
+            {
+                document.write("Nombre: " + nombres[i] + "<br/>");
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

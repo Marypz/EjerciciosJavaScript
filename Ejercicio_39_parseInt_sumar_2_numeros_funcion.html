@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 39: Sumar Dos Números con Función</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Vamos a hacer lo mismo pero empleando una función.
+        function sumarNumeros(num1, num2){
+            var resultado = Number(num1) + Number(num2);
+            return resultado;
+        }
+
+        var numero1 = prompt("Introduzca un número");
+        var numero2 = prompt("Introduzca otro número");
+        //var resultado = sumarNumeros(numero1,numero2);
+
+        //Mostramos el resultado llamando a la función "sumarNumeros"
+        alert("El resultado de la suma de " + numero1 + " y " + numero2 + " es: " + sumarNumeros(numero1,numero2));
+
+    </script>
+</body>
+
+</html>
