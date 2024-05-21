@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 48: Introduce una edad</title>
+    
+</head>
+
+<body>
+    <h1>Validar Edad</h1>
+    <script>
+
+        //CON "WHILE"
+        var edad = Number(prompt("Introzuca su edad:"));
+
+        while (edad <= 0 || edad >= 18){
+            edad = Number(prompt("Edad no válida introduzaca una entre 1-17:"));
+        }
+
+        alert("La edad introducida es de: " + edad);
+
+        //CON "DO WHILE"
+        var edad;
+
+        do{
+            edad = Number(prompt("Introzuca una edad entre 1-17:"));
+        }while (edad <=0 || edad >=18);
+
+        alert("La edad introducida es de: " + edad);
+    </script>
+</body>
+
+</html>

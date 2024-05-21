@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 46: Operaciones Con Números</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Declaramos y asignamos los valores.
+        var numero1 = prompt("Introduze el primer número.");
+        var operacion = prompt("Introduce la operación a realizar: +, -, *, /")
+        var numero2 = prompt("Introduze el segundo número.");
+        var resultado;
+
+        /*
+            numero1 = parseFloat(numero1);
+            numero2 = parseFloat(numero2);
+        */
+
+        //Comparamos la operación con las posibles opciones y si coincide que haga dicha operación.
+        if (operacion === "+"){
+            resultado = Number(numero1) + Number(numero2);
+        }
+        else if(operacion === "-"){
+            resultado = Number(numero1) - Number(numero2);
+        }
+        else if(operacion === "*"){
+            resultado = Number(numero1) * Number(numero2);
+        }
+        else if(operacion === "/"){
+            if (numero2 !== 0){
+                resultado = Number(numero1) / Number(numero2);
+            }
+            else{
+                alert("No se puede dividir entre 0");
+            }
+        }
+        else{
+            alert("Operación no válida, introduce bien los datos.")
+        }
+
+        if (typeof resultado !== 'undefined')
+        {
+            alert("El resultado de tu operación es: " + resultado);
+        }
+        //alert("El resultado de tu operación es: " + resultado);
+
+    </script>
+</body>
+
+</html>

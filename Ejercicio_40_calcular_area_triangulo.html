@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 40: Calcular Área de un Triángulo</title>
+
+</head>
+
+<body>
+    <script>
+
+        //Pedir al usuario que introduzcla la base y altura del triángulo.
+        var baseTriangulo = prompt("Introduzca la longitud de la base del triángulo.");
+        var alturaTriangulo = prompt("Introduzca la altura del triángulo.");
+
+        //Calculamos el área del triángulo con la fórmula correspondiente "(base*altura)/2" y guardamos el resultado.
+        //Recuerda que hay que transformar con Number() el numero que pedimos anteriormente ya que se guarda como string y no int.
+        var areaTriangulo = (Number(baseTriangulo) * Number(alturaTriangulo))/ 2;
+
+        alert("El área del triángulo de base: " + baseTriangulo+ " y altura de: " + alturaTriangulo + " es de: " + areaTriangulo);
+
+    </script>
+</body>
+
+</html>

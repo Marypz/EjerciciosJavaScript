@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 49: Switch Semáforo</title>
+    
+</head>
+
+<body>
+
+    <script>
+
+        var colorSemaforo = prompt("Introduzca un color del Semáforo" + "\nRojo, Amarillo o Verde");
+        /*Como en switch hace capitalización (distingue entre mayusculas y minusculas)
+        le decimos primero que ponga TODAS las letras en minuscula con ".toLocaleLowerCase()""
+        con esto nos aseguramos que auque se ecriba con mayúsculas en el "prompt" podrá reconocer la palabra y compararla con los casos (case)*/
+        //También se puede usar el ".toUpperCase()" para usar las mayúsculas, la cuestión es que las letras tengan la misma capitalización para que el switch pueda compararlos.
+        
+        switch (colorSemaforo.toLocaleLowerCase()){ //.toUpperCase()
+            case "rojo": //case "ROJO"
+                document.write("El semáforo está en Rojo.<br>No puedes pasar, detente.");
+                break;
+            
+            case "amarillo": //case "AMARILLO"
+                document.write("El semáforo está en Amarillo.<br>Estate alerta.");
+                break;
+            
+            case "verde": //case "VERDE"
+                document.write("El semáforo está en Verde.<br>Continue su marcha");
+                break;
+            
+            default:
+                alert("Color no valido.");
+                break;
+            
+        }
+        
+    </script>
+</body>
+
+</html>

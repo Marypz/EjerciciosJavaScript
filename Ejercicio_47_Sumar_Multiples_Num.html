@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 47: Sumar múltiples números</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //DECLARACIÓN DE VARIABLES
+        var suma = 0, contador = 0, media;
+        //var contador = 0;
+        //var media;
+
+        //Introducir un número y transformarlo al una variable numérica
+        var numero1 = prompt("Introduce un número para sumar");
+        numero1 = Number(numero1);
+        //var numero1 = parseInt(prompt("Introduce un número para sumar"));
+
+        //Mientras el número introducido (numero1) no sea 0 se sigue sumando.
+        while (numero1 !== 0)
+        {
+            suma = suma + numero1;
+            contador++;
+            //contador = contador + 1;
+            var numero1 = prompt("Introduce otro número para añadir a la suma.");
+            numero1 = Number(numero1);
+        }
+        //Calcular la media de la suma.
+        media = suma / contador;
+
+        //Mostrar resualtados
+        //Con una alerta
+        alert("La suma es de: " + suma);
+        alert("La media es de: " + media);
+        //En el "alert" podemos usar "\n" para hacer un salto de línea en lugar del <br>
+        alert("La suma es de: " + suma + "\nLa media es de: " + media);
+
+        //Escribiendolo en la propia página web.
+        document.write("La suma es de: " + suma + "<br>");
+        document.write("La media es de: " + media + "<br>");
+        //Todo en una misma línea.
+        document.write("La suma es de: " + suma + "<br>" + "La media es de: " + media);
+
+    </script>
+</body>
+
+</html>

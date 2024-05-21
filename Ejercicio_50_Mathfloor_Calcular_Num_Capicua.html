@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 50: Calcular Num Capicua</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Función que comprueba si nuestro número es o no es capicua.
+        function numCapicua(num){
+            //Las variables que necesitaremos van a ser, el número original que quermos comprobar y el numero invertido.
+            var numInvertido = 0;
+            var numOriginal = num;
+
+            //En este ejercicio mientras el número inroducido sea superior a 0 (positivo) calculamos como sería invertido.
+            //Si metemos un número negativo no lo comprobará.
+            while (num > 0){
+                //Obtenemos el último dígito del número introducido (num) que se puede obtener mediante el resto de la división num/10.
+                var ultDigito = num % 10;
+                //Usamos la fórmula para calcular el número invertido.
+                numInvertido = (numInvertido * 10) + ultDigito;
+                /*"Math.floor()" es una función  que toma un número como argumento y devuelve el entero 
+                 más grande menor o igual que ese número
+                     -Básicamente redondea hacia abajo al entero más cercano. 
+                Por ejemplo: "Math.floor(3.9)" devolverá "3“.*/
+                num = Math.floor(num/10);
+            }
+            if (numOriginal === numInvertido){
+                //Si el número Original y el Invertido son iguales, la función devolverá un "true", es decir, que es verdadero.
+                return true;
+            }
+            else{
+                //Si el número Original y el Invertido NO son iguales, la función devolverá un "false", es decir, que es falso.
+                return false;
+            }
+        }
+
+        var numero = Number(prompt("Introduce un número para comprobar si es capicua."));
+        if (numCapicua(numero) === true){
+            alert("El número " + numero + " es capicua.");
+        }
+        else{
+            alert("El número " + numero + " no es capicua.");
+        }
+
+    </script>
+</body>
+
+</html>

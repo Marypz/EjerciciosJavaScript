@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 44: Comparar Variables</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Declaramos y asignamos los valores de las variables pidiendoselas al usuario.
+        var numero1 = prompt("Introduze el primer número.");
+        var numero2 = prompt("Introduce el segundo número.");
+
+        //Comparamos las variables con el "if"
+        //En este caso hay 2 posibilidades, así que solo hace falta un "if" que si no se cumple será la siguiente opción "else"
+        if(Number(numero1) < Number(numero2)){
+            alert("El número " + numero1 + " es menor que " + numero2);
+        }
+        else{
+            alert("El número " + numero2 + " es menor o igual que " + numero1)
+        }
+    </script>
+</body>
+
+</html>

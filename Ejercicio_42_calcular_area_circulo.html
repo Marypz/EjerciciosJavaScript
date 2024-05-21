@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 42: Calcular Área de un Círculo</title>
+    
+</head>
+
+<body>
+    <script>
+
+        //Pedir al usuario que introduzcla el radio del círculo y declarar el número pi (3.1416) para la fórmula de calcular el área de un círculo.
+        var radioCirculo = prompt("Introduzca el radio del círculo.");
+        //Para declarar el número pi en JavaScript podemos usar el "Math.PI"
+        var numPi = Math.PI;
+
+        //Calculo matemático para calcular el área de un círculo (área = π * radio²) radio² = multiplicar 2 veces el radio.
+        var areaCirculo = numPi * (Number(radioCirculo) * Number(radioCirculo));
+        /*También se puede calcular el área de un cículo con "Math.Pow" usando esta fórmula:
+            var areaCirculo = numPi * Math.pow(radio,2);
+        */
+
+        //Mostar el área del triángulo
+        alert("El área de un círculo de radio: " + radioCirculo + " es de: " + areaCirculo);
+
+    </script>
+</body>
+
+</html>
