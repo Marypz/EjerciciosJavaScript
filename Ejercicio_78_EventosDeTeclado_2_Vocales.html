@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 77: Eventos de Docuemnto</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('keydown',function(event){
+
+            //Al presionar una tecla vocal ocurre un evento.
+
+            //CON LETRAS USANDO EL "KEY"
+            switch(event.key.toLowerCase()){
+                case ("a"): //Tecla "a"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla A";
+                    break;
+                case "e": //Tecla "e"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla E";
+                    break;
+                case "i": //Tecla "i"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla I";
+                    break;
+                case "o": //Tecla "o"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla O";
+                    break;
+                case "u": //Tecla "u"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla U";
+                    break;
+                default:
+                    document.getElementById('resultado').innerHTML = "";
+                    break;
+            }
+
+            //CON NÚMEROS USANDO EL "KEYCODE"
+            /*switch(event.keyCode){
+                case 65: //Tecla "a"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla A";
+                    break;
+                case 69: //Tecla "e"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla E";
+                    break;
+                case 73: //Tecla "i"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla I";
+                    break;
+                case 79: //Tecla "o"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla O";
+                    break;
+                case 85: //Tecla "u"
+                    document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla U";
+                    break;
+                default:
+                    document.getElementById('resultado').innerHTML = "";
+                    break;
+            }*/
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h2 id="resultado">Presiona una letra vocal</h2>
+</body>
+
+</html>

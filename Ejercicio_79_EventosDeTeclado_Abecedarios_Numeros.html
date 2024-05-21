@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 79: Eventos de Teclado</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        //En este código vamos ha hacer que nos detecte y nos diga que tecla hemos presionado
+        //Funciona con todo el abecedario (de la A a la Z) + Ñ (mayuculas y minusculas)
+        //Funciona con los números del tclado (del 0 al 9)
+        function mostrarMensaje(tecla){
+            var mensaje = document.getElementById("resultado");
+            if((tecla >= 'a' && tecla <= 'z') || (tecla >= "A" && tecla <= "Z") || (tecla >= "0" && tecla <= "9") || (tecla === "Ñ" || tecla === "ñ")){
+                mensaje.innerHTML = `Presionaste la tecla ${tecla.toUpperCase()}!`;
+            }else{
+                mensaje.innerHTML = "";
+            }
+        }
+        //Añadimos un evento que "escuche cuando presionamos una letra"
+        document.addEventListener("keydown", function(event){
+            var tecla = event.key;
+            mostrarMensaje(tecla);
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h2 id="resultado">Presiona una tecla vocal o numérica</h2>
+</body>
+
+</html>

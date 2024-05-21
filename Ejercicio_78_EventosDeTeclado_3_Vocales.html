@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 77: Eventos de Docuemnto</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        //Al presionar una tecla vocal ocurre un evento que nos muestra la vocal presionada.
+
+        function mostrarMensaje(tecla){
+            //Capturamos el lugar donde se mostrará el mensaje y lo guardamos en una variable
+            var mensaje = document.getElementById('resultado');
+            //Con un switch dependiendo de cual es la que presionamos nos dirá diferentes mensajes.
+            switch(tecla){
+            case ("a"): //Tecla "a"
+                mensaje.innerHTML = "Se ha pulsado la tecla A";
+                break;
+            case "e": //Tecla "e"
+                mensaje.innerHTML = "Se ha pulsado la tecla E";
+                break;
+            case "i": //Tecla "i"
+                mensaje.innerHTML = "Se ha pulsado la tecla I";
+                break;
+            case "o": //Tecla "o"
+                mensaje.innerHTML = "Se ha pulsado la tecla O";
+                break;
+            case "u": //Tecla "u"
+                document.getElementById('resultado').innerHTML = "Se ha pulsado la tecla U";
+                break;
+            default:
+                document.getElementById('resultado').innerHTML = "";
+                break;
+            }
+        }
+
+        //Añadimos un evento que "escuche cuando presionamos una letra"
+        document.addEventListener("keydown", function(event){
+            //Guardamos la tecla en una variable y nos aseguramos de que se convierta en minúsculas para que funcione si presionamos la letra en mayuscula o minuscula.
+            var tecla = event.key.toLowerCase();
+            mostrarMensaje(tecla);
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h2 id="resultado">Presiona una letra vocal</h2>
+</body>
+
+</html>

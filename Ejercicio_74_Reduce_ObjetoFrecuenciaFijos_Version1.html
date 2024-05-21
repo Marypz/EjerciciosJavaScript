@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 74: Objeto de Frecuencias</title>
+    
+</head>
+
+<body>
+
+    <h1>Objeto de Frecuencias</h1>
+    <div id="items"></div>
+
+    <script type="text/javascript">
+
+        /* El método reduce() en JavaScript se utiliza para reducir el array a un solo valor.
+        En este caso específico, estás utilizando reduce() para construir un objeto que contenga 
+        las frecuencias de cada elemento en el array items.
+        */
+
+        //Creamos un array "items" para contener los valores.
+        const items = [5,6,7,6,5,6,7,8];
+        /*Creamos una variable llamada "frecuencias" donde vamos a guardar el resultado del reduce();
+            -items.reduce((objeto, elemento) =>{...},{}); llamamos a la función de "reduce()" sobre el array "items".
+                -Esto aplicara la función reductora sobre cada elemento del array, y al final, devolverá un único resultado.
+                -En este caso, la función reductora cuenta con 2 parámetros "objeto" y "elemento"
+                    -"objeto" es el acumulador que se va actualizando en cada iteración
+                              guarda las frecuencias de los elementos del array, es decir, las veces que aparece unn elemento dentro del array.
+                    -"elemento" es el valor elemento actual del array.
+                -La función reductora también inicia con un objeto vacío (el segundo {}) como valor inicial del acumulador.
+        */
+        const frecuencias = items.reduce((objeto, elemento) =>{
+            //Si el "elemento" actual no (!) se encunetra en "objeto", significa que es la primera vez que encontramos el "elemento"
+            /*Si nos lo encontramos por primera vez le decimos que su frencuencia de momento es "1", porque aparece una vez.
+            así que le decimos que guarde la frencuencia (objeto) con la que ha aparecido el elemento del array (elemento)*/
+            if(!objeto[elemento]){
+                objeto[elemento] = 1
+            }else{
+                //Si ya se encuantra guarada una frecuencia (objeto) para el "elemento", entonces incrementamos la frecuencia (objeto) en 1
+                objeto[elemento] = objeto[elemento] + 1
+            }
+            //devolvelos "objeto" que es el que contiene las frecuancias de los elementos.
+            return objeto
+        }, {});
+
+        /*
+        const frecuencias = items.reduce((frecuencia, elemento) => 
+        {frecuencia[elemento] = (frecuencia[elemento] || 0) + 1;
+        return frecuencia;}, {});*/
+
+        //Mostramos las frecuencias.
+        console.log(frecuencias);
+
+     </script>
+</body>
+
+</html>

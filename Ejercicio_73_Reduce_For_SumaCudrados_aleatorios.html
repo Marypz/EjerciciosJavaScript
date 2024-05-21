@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 73: Suma de Cuadrados de Números Alatorios</title>
+    
+</head>
+
+<body>
+
+    <h1>Suma de Cuadrados de Números</h1>
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        const numbers = [];
+
+        //Un bucle que rellenará el array con números aleatorios entre el 1 y 10.
+        for(let i = 0; i < 5; i++){
+            /*"Math.floor()"redonderá hacia abajo o por defecto al número entero más cercano.
+              "Math.random()"  genera números aleatorios, en este caso del 1 al 10, ambos incluidos.*/
+            const randomNumber = Math.floor(Math.random()*10) + 1;
+            numbers.push(randomNumber);
+        }
+
+        //Usamos el "reduce()" para reducir el array a un único valor.
+        const reducedValue = numbers.reduce((suma, number) => (suma + number**2), 0);
+        
+        console.log(reducedValue);
+        document.getElementById('numeros').innerHTML = "Los números del array son: " + numbers.join();
+        document.getElementById("resultado").innerHTML = "La suma de los cuadrados es de: " + reducedValue;
+    </script>
+</body>
+
+</html>

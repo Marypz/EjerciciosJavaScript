@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 72: Suma de Cuadrados de Números</title>
+    
+</head>
+
+<body>
+
+    <h1>Suma de Cuadrados de Números</h1>
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+
+    <script type="text/javascript">
+        const numbers = [5,4,8,6,2];
+        
+        /*Usamos el "reduce()" para reducir el array a un único valor.
+            (suma, number): Son los argumentos de la función que se pasa a reduce().
+                suma: es el acumulador que lleva la suma de los cuadrados de los elementos del array
+                number: es el elemento actual del array en cada iteración.
+            => (suma + number**2): Es una función flecha que toma suma y number como argumentos y devuelve la suma del acumulador suma y el cuadrado del elemento actual number.
+            0: Es el valor inicial del acumulador suma. En este caso, se inicializa en 0. */
+        const reducedValue = numbers.reduce((suma, number) => (suma + number**2), 0);
+        
+
+        console.log(reducedValue);
+        // El método "join()" crea y devuelve una nueva cadena al concatenar todos los elementos (números) del array separados, por defecto, por comas (',').
+        // Si el array tiene solo un elemento, ese elemento se devolverá sin usar el separador.
+        document.getElementById('numeros').innerHTML = "Los números del array son: " + numbers.join();
+        document.getElementById("resultado").innerHTML = "La suma de los cuadrados es de: " + reducedValue;
+    </script>
+</body>
+
+</html>

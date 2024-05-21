@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 77: Eventos de Docuemnto</title>
+
+    <style>
+        
+    </style>
+
+    <script>
+        document.addEventListener('keydown',function(event){
+            if(event.keyCode === 13){
+                console.log('Se presionó la tecla Enter');
+            }
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h1>Bienvenido a la página web</h1>
+    <div id="contenedor"></div>
+</body>
+
+</html>

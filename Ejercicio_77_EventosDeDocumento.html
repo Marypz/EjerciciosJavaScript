@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 77: Eventos de Docuemnto</title>
+
+    <style>
+        
+    </style>
+
+    <script>
+        window.onload = function(){
+            alert("La página se ha cargado correctamente.");
+        }
+        window.onbeforeunload = function(){
+            return "¿Estas seguro de que quieres salir?";
+        }
+        window.onunload = function(){
+            alert("La página web se está descargado");
+        }
+        function despedirse(){
+            alert('¡Hasta la próxima visita!');
+            //Cerramos la ventana del navegador web.
+            window.close();
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1>Bienvenido a la página web</h1>
+    <button onclick="despedirse()">Despedirse</button>
+    <div id="contenedor"></div>
+</body>
+
+</html>

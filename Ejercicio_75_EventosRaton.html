@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 75: Eventos de Ratón</title>
+
+    <style>
+        img{
+            width: 20%;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        function onClickEvent(){
+            alert('Evento onClick');
+        }
+        function onDblClickEvent(){
+            alert('Evento onDblClick');
+        }
+        function onMouseDownEvent(){
+            alert('Evento onMouseDownEvent');
+        }
+        function onMouseUpEvent(){
+            alert('Evento onMouseUpEvent');
+        }
+        function onMouseOverEvent(){
+            alert('Evento onMouseOverEvent');
+        }
+        function onMouseMoveEvent(){
+            alert('Evento onMouseMoveEvent');
+        }
+        function onMouseOutEvent(){
+            alert('Evento onMouseOutEvent');
+        }
+    </script>
+    
+</head>
+
+<body>
+
+    <img src="TigreBlanco.jpg" alt="TigreBlanco.jpg" onClick="onClickEvent()">
+    <img src="TigreBlanco.jpg" alt="TigreBlanco.jpg" ondblclick="onDblClickEvent()">
+    <img src="TigreBlanco.jpg" alt="TigreBlanco.jpg" onmousedown="onMouseDownEvent()" onmouseup="onMouseUpEvent()" onmousemove="onMouseMoveEvent()">
+    <img src="TigreBlanco.jpg" alt="TigreBlanco.jpg" onmouseover="onMouseOverEvent()" onmouseout="onMouseOutEvent()">
+</body>
+
+</html>
