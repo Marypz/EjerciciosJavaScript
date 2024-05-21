@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 82: Eventos de Teclado</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        //En este código vamos ha hacer que nos detecte y nos diga que tecla hemos presionado con su numero de "keycode"
+        //Añadimos un evento que "escuche cuando presionamos una letra"
+        document.addEventListener("keydown", function(event){
+            //Guardamos la tecla en una varible
+            var tecla = event.key;
+            //La mostramos en la página web
+            var mensaje = document.getElementById("resultado");
+            mensaje.innerHTML = `Presionaste la tecla ${tecla}`;
+        });
+    </script>
+    
+</head>
+
+<body>
+    <h2 id="resultado">Presiona una tecla</h2>
+</body>
+
+</html>

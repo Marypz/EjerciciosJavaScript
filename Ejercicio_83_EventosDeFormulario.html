@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 83: Eventos de Formulario</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <fieldset>
+        <legend>Formulario</legend>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" onchange="cambioNombre()" onblur="validarNombre()" onfocus="resaltarNombre()"><br>
+
+            <label for="mail">Email:</label>
+            <input type="email" name="mail" id="mail" onchange="cambioEmail()" onblur="validarEmail()" onfocus="resaltarEmail()"><br>
+
+            <label for="passw">Contraseña:</label>
+            <input type="password" name="passw" id="passw" onblur="validarContrasena()"><br>
+
+            <label for="coment">Comentarios:</label>
+            <textarea name="coment" id="coment" onselect="textoSelecionado()"></textarea><br>
+
+            <input type="submit" value="Enviar Datos" onsubmit="subirDatos()">
+            <input type="reset" value="Borrar Datos" onreset="restablecerForm()">
+        </form>
+    </fieldset>
+
+    <script>
+        //Funciones que se ejecutan al cambiar datos
+        function cambioNombre(){
+            console.log("Ha cambiado el nombre");
+        }
+        function cambioEmail(){
+            console.log("Ha cambiado el e-mail");
+        }
+
+        //Funciones que se ejecutan al perder el "focus"
+        function validarNombre(){
+            console.log("Validando nombre");
+        }
+        function validarEmail(){
+            console.log("Validando e-mail");
+        }
+        function validarContrasena(){
+            console.log("Validando contraseña");
+        }
+
+        //Funciones que se ejecutan cuando se hace "focus" al elemento
+        function resaltarNombre(){
+            console.log("Resaltando nombre");
+        }
+        function resaltarEmail(){
+            console.log("Resaltando e-mail");
+        }
+        function textoSelecionado(){
+            console.log("Seleccionando texto del área de comentarios");
+        }
+
+        //Funciones que se ejecutan cal borrar o enviar los datos.
+        function restablecerForm(){
+            console.log("Se han borrado los datos");
+        }
+        function subirDatos(){
+            console.log("Se han enviado los datos");
+        }
+        
+    </script>
+</body>
+
+</html>

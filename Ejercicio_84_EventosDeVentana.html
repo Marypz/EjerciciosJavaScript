@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 84: Eventos de Ventana</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2 id="mensaje"></h2>
+    
+    <script>
+        //Capturamos en variables el mensaje y la ventana.
+        var mensaje = document.getElementById("mensaje");
+        var ventana = window;
+
+        //El "onresize" detecta cuando se cambia las dimensiones de la ventana del navegador web.
+        ventana.onresize = function(){
+            //Mostramos en la página el ancho y alto de la vantana.
+            mensaje.innerHTML="Tamaño de la ventana:" + ventana.innerWidth + ' x '+ ventana.innerHeight;
+        };
+
+        ventana.onmove = function(){
+            //El "onmove" detecta que se mueve la ventana pero no lo muestra porque no funciona en la mayoría de navegadores modernos.
+            console.log("La ventana se ha movido.");
+        };
+    </script>
+</body>
+
+</html>
