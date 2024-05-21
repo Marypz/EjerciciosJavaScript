@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 58: Selecciona Dia de la Semana</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>  
+</head>
+
+<body>
+    
+    <h1>Selecciona Dia de la Semana</h1><br/>
+
+    <p>Introduzca un número del 1 al 7 para mostarar un día de la semana.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button><br/><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+
+        function verificarNumero(){
+            const numero = parseInt(document.getElementById("numero").value);
+            const mensaje = document.getElementById('mensaje');
+
+            //var dia= "";
+
+            switch(numero){
+                case 1:{
+                    mensaje.innerHTML = "Lunes";
+                    //dia = "Lunes";
+                    break;
+                }
+                case 2:{
+                    mensaje.innerHTML = "Martes";
+                    //dia = "Martes";
+                    break;
+                }
+                case 3:{
+                    mensaje.innerHTML = "Miércoles";
+                    //dia = "Miércoles";
+                    break;
+                }
+                case 4:{
+                    mensaje.innerHTML = "Jueves";
+                    //dia = "Jueves";
+                    break;
+                }
+                case 5:{
+                    mensaje.innerHTML = "Viernes";
+                    //dia = "Viernes";
+                    break;
+                }
+                case 6:{
+                    mensaje.innerHTML = "Sábado";
+                    //dia = "Sabado";
+                    break;
+                }
+                case 7:{
+                    mensaje.innerHTML = "Domingo";
+                    //dia = "Domingo";
+                    break;
+                }
+                default:{
+                    mensaje.innerHTML = "Numero Introducido no valido. Introduce un número entre 1-7.";
+                    //dia = "El numero introducido no es valido."
+                    break;
+                }
+                //mensaje.innerHTML = dia;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

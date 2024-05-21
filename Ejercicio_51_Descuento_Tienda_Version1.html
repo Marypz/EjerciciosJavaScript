@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 51: Descuento</title>
+    
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var productos = parseInt(prompt("Introduce la cantidad de objetos a comprar"));
+        var precio = parseFloat(prompt("Introduce la cantidad sin descuento (€)"));
+        var precioDescontado;
+
+        /*VAMOS A CALCULAR EL PRECIO DSCONTADO EN UNA SOLA LÍNEA DE CÓDIGO
+            -Para evitar variables y elementos extras podemos hacerlo todo en una línea siguiendo esta fórmula:
+            "precioDescontado = precio * (1 - 0.1)"
+                "precioDescontado" es la cantidad donde se guardará el resultado qeu queremos saber, en este caso, el precio final con el descuento aplicado.
+                "precio" representa el precio original del producto sin ningun tipo de descuento.
+                "(1 - 0.01)" en este caso, le resta a el "precio" su 10%
+                    "1" representa el 100% de la cantidad total a la que vamos a aplicar el descuento.
+                    "0.1" es la representación decimal del 10%, es decir, la manera decimal de refereirse a un 10% es 0.1
+
+        */
+
+        if(productos <= 5){
+
+            precioDescontado = precio * (1 - 0.1);
+            document.write("El precio final con un 10% de descuento es de: " + precioDescontado);
+        }
+        else if (productos <= 10){
+
+            precioDescontado = precio * (1 - 0.15);
+            document.write("El precio final con un 15% de descuento es de: " + precioDescontado);
+        }
+        else{
+                
+            precioDescontado = precio * (1 - 0.2);
+            document.write("El precio final con un 20% de descuento es de: " + precioDescontado);
+        }
+
+    </script>
+</body>
+
+</html>

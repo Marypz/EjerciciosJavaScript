@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 55: Introduce un número válido</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <h1>Introduce un número Válido</h1><br/>
+
+    <p>Introduzca un número del 1-10</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button><br/><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+        function verificarNumero(){
+            //Capturamos el valor del imput
+            var numero = document.getElementById("numero").value;
+            //Capturamos el espacio del mensaje
+            var mensaje = document.getElementById("mensaje");
+
+            //Comprobamos que el número introducido se encuentre entre el 0 y 10.
+            if (numero >= 1 && numero <=10){
+                //Creamos una variable en la que se guarden los numeros del 1 (contador) hasta el número introducido en el imput (numero)
+                var numeros = "";
+                for (var contador = 1; contador <= numero; contador++) {
+                    /*Con el "+=" añade a la cantidad exisitente un valor en lugar de reemplazarlo.
+                    En este caso queremos guardar el número del contador y un espacio " " para separar los números.*/
+                    numeros += contador + " ";
+                }
+                //Mostramos el resultado en pantalla
+                mensaje.innerHTML = "Números del 1 al " + numero + ": " + numeros;
+            }
+            else{
+                mensaje.innerHTML = "Numero introducido no es válido. Introduce un número del 0-10";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 53: Par o Impar</title>
+
+    <style>
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+
+<body style="text-align: center;">
+
+    <h1>Verifica si un número Par o Impar</h1><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button>
+
+    <p id = "mensaje"></p>
+
+    <script type="text/javascript">
+
+        function verificarNumero(){
+            /*Leemos y capturamos el número con el "id" 
+            y lo transformamos en un valor numerico entero (int) en decimales (10)*/
+            //const entradaNumero = document.getElementById("numero");
+            //const numero = parseInt(entradaNumero.value,10);
+
+            //Capturamos el elemento con el "id" llamado "numero" y guardamos el valor que contiene que es lo que nos interesa.
+            const numero = parseInt(document.getElementById("numero").value);
+            //capturamos el espacio del mensaje
+            const mensaje = document.getElementById('mensaje');
+
+            //Con un OPERADOR TERNARIO
+            numero %2 ===0 ? mensaje.innerHTML = "El número "+ numero+" es par." :  mensaje.innerHTML = "El número "+numero+ " es impar.";
+            /*
+            //Con el IF
+            if(numero %2 === 0){
+                mensaje.innerHTML = "El número " + numero + " es par.";
+            }
+            else{
+                mensaje.innerHTML = "El número " + numero + " es impar.";
+            }*/
+        }
+    </script>
+</body>
+
+</html>

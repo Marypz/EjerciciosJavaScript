@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 54: Aprobado o Suspendido</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>Comprueba si has Aprobado</h1><br/>
+
+    <p>Introduzca un número del 0-20</p><br/>
+
+    <label for="nota">Introduzca un número</label> <input type="number" name="nota" id="nota">
+    <!-- Podemos ya añadirle un rango al imput de 0-20 con las propiedades "min" y "max"
+        <input type="number" name="nota" id="nota" min="0" max="20">
+        Así nos aseguramos de que el usuario introduzca un número entre el 0 y el 20.
+    -->
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button>
+
+    <p id = "mensaje"></p>
+
+    <script type="text/javascript">
+
+        function verificarNumero(){
+            //Capturamos el valor del imput
+            var nota = parseFloat(document.getElementById("nota").value);
+            //Capturamos el espacio del mensaje
+            var mensaje = document.getElementById('mensaje');
+
+            //CON UN OPERADOR TERNARIO
+            /*Con un operador ternario simplemente pones todas las condiciones seguidas con su "?" y luego los resultados.
+            si se cumplen ambas condicones, mostará la primera solución (aprobado).
+            si solo se cumple la primera condición, mostrará la segunda solución (suspendido).
+            si no se cumple ninguna, se mostrará la tercera solución (error). */
+            nota >= 0 && nota <=20 ? nota >= 10 ? mensaje.innerHTML = "¡Has aprobado el examen!" : mensaje.innerHTML = "¡Has suspendido el examen!" : mensaje.innerHTML = "Valor no válido, introduce un numero entre 0-20.";
+
+            //CON EL "IF"
+            //Revisamos si "nota" contiene un valor entre los parámetros deseados.
+            /*if (nota >= 0 && nota<=20){
+                //Miramos a ver si= mayor o igual que 10-> aprobado, menor que 10-> suspendido
+                if(nota >= 10){
+                    mensaje.innerHTML = "¡Has aprobado el examen!";
+                }
+                else{
+                    mensaje.innerHTML = "¡Has suspendido el examen!";
+                }
+            }
+            else{
+                mensaje.innerHTML = "Valor no válido, introduce un numero entre 0-20.";
+            }*/
+        }
+
+    </script>
+</body>
+
+</html>

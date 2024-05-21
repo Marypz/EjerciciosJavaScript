@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 55: Introduce un número válido</title>
+    
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        
+        var numero = prompt("Numero introducido no es válido. Introduce un número del 0-10");
+
+        while(numero<1 || numero>10){
+            numero = prompt("Numero introducido no es válido. Introduce un número del 0-10");
+        }
+
+        for(var contador = 1; contador <= numero; contador++){
+            console.log(contador);
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 60: Tablas del 1 al 10</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tablas del 1 al 10</h1><br/>
+
+    <p>Crea tablas del 1 al 10</p><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+
+        //Usamos un evento llamado "onload" que hace que se ejecute al cargar la págiga web (window)
+        //En este caso usa una función que llama a otra función.
+        //Esto se usa cuando no hya interacciones entre usurio y código.
+        window.onload = function(){
+            crearTabla();
+        }
+
+        function crearTabla(){
+            //Necesitamos una variable que nos guarde en texto (cadena) el resultado a mostrar.
+            let resultado = "";
+            //Creamos el bucle que nos vaya aumenando en 1 ambos operandos usando un bucle para cada operando.
+            for( let i = 1; i<= 10; i++){
+                //Usamos el "+=" para añadir a nustra cadena de texto el texto del título.
+                //RECUERDA que cualquier elemento de html hay que ponerlo entre comillas.
+                resultado += "<h3>Tabla del " + i + "</h3>";
+                for(let j = 1; j <= 10; j++){
+                    //Guardemos la estructura a mostar de la multiplicación
+                    //operando1 (i) x operando2 (j) = resultado (i*j) + salto de linea en html5 (<br/>)
+                    resultado += i + " x " + j + " = " + i * j + "<br/>";
+                }
+            }
+            //Mostramos la tabla en el lugar que hemos creado para ello buscandolo mendiante su "id".
+            document.getElementById('mensaje').innerHTML = resultado;
+        }
+        
+    </script>
+</body>
+
+</html>

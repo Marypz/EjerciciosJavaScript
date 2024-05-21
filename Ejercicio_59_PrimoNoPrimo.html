@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 59: Numero Primo o No Primo</title>
+    
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Comprobar si es Numero Primo</h1><br/>
+
+    <p>Introduzca un número para ver si es un número primo.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button><br/><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+
+        function verificarNumero(){
+            var numero = parseInt(document.getElementById("numero").value);
+            var mensaje = document.getElementById('mensaje');
+
+            //Un bool que nos dirá si el número es primo o no, de momento lo dejamos en true y habrá que decirle cuando NO ES PRIMO.
+            let esPrimo = true;
+
+            //Si el número es menor que 2, NO ES PRIMO, ya que ha de ser un número natural MAYOR que 1.
+            if(numero < 2){
+                esPrimo = false;
+            }
+            //Si es igual o mayor que 2.
+            else{
+                /*El bucle "for" revisa cada número desde 2 hasta un número ménos que "numero"
+                luego, verifica si alguno de esos numeros comprobados se peude dividir entre "numero" y dar de resto 0.
+                si encuntra alguno, signufica que "numero" NO ES PRIMO.*/
+                for(var i = 2; i < numero; i++){
+                    //Si el resto de la dividión del "numero" y 2 (i) es 0, NO ES PRIMO.
+                    if (numero % i === 0){
+                        esPrimo = false;
+                        break;
+                    }
+                }
+            }
+            if (esPrimo){
+                mensaje.innerHTML = "El número " + numero + " es primo."
+            } else{
+                mensaje.innerHTML = "El número " + numero + " NO es primo."
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

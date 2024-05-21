@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad 51: Descuento</title>
+
+    <style>
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .ofertas{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+
+<body style="text-align: center;">
+
+    <h1>Calculadora de Descuentos</h1><br/>
+
+    <h3>¡¡¡OFERTA ESPECIAL!!</h3>
+    <p class="ofertas">¡Si compras hasta 5 obtienes un 10% de descuento!<br/>
+    ¡Si compras hasta 10 obtienes un 15% de descuento!<br/>
+    ¡Si compras +10 obtienes un 20% de descuento!</p>
+
+
+    <label>Cantidad de productos que vas a comprar:</label> <input type="number" name="cantidadProd" id="cantidadProd"><br/>
+    <label>Precio total sin decuento (€):</label> <input type="number" name="precioProd" id="precioProd"><br/><br/><br/>
+    <button id="botonCalculo" onclick="calcularDescuento()">Calcular el precio con descuento (€)</button>
+
+    <p id="mensaje"></p>
+
+    <script type="text/javascript">
+
+        function calcularDescuento(){
+            var cantidad = parseInt(document.getElementById("cantidadProd").value.replace(',','.'));
+            var precio = parseFloat(document.getElementById("precioProd").value.replace(',','.'));
+            //Operador Ternario que actua como un "if"
+            /*La variable "descuento" es igual a:
+                si la "cantidad" es menor o igual que 5 entonces (?) el "descuento" vale "0.1" (10%)
+                si no/else if (:) si cantidad es menor o igual a 10 entonces (?) el "descuento" vale "0.15" (15%)
+                si no/ else (:) "descuento" vale "0.2" (20%)
+            */
+            var descuento = cantidad <= 5 ? 0.1 : cantidad <= 10? 0.15 : 0.2;
+            //Calculamos el precio Final con esta fórmula:
+            var precioFinal = precio * (1 - descuento);
+            //Mostramos el precio final y podemos añadir el porcentaje de descuento multiplicando el descuento (0.??) x 100
+            document.getElementById('mensaje').innerHTML = "El precio final con un descuento del " + descuento * 100+ "% es de: " + precioFinal;
+
+            /*Se puede usar el "toFixed()" para si el número contuviera más de 2 decimales
+            muestre el número con solo 2 decimales en lugar de todos los que tenga.
+            Ej:     var percioFinal = 38.7654364;
+                    precioFinal.toFixed(2); // 38.76
+            */
+            //document.getElementById('mensaje').innerHTML = "El precio final con un descuento del " + descuento * 100+ "% es de: " + precioFinal.toFixed(2).value.replace(',','.');
+
+        }
+
+
+    </script>
+</body>
+
+</html>

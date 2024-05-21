@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 56: Crear una tabla de Multiplicar</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Crear una tabla de Multiplicación</h1><br/>
+
+    <p>Introduzca un número para hacer la tabla de multiplicar.</p><br/>
+
+    <label for="numero">Introduzca un número</label> <input type="number" name="numero" id="numero">
+    <button id="botonVerificar" onclick="verificarNumero()">Verificar</button><br/><br/>
+
+    <div id = "mensaje"></div>
+
+    <script type="text/javascript">
+
+        function verificarNumero(){
+            //Capturamos el numero introducido en el imput y el espacio donde se mostarará el mensaje con el "id"
+            var numero = document.getElementById("numero").value;
+            var mensaje = document.getElementById("mensaje");
+
+            //Creamos una variable que nos guarde el resultado a mostrar de la multiplicación.
+            var numeros = "";
+            for (var contador = 1; contador <= 10; contador++) {/*
+                //Creamos la variable que nos guardará el resultado de la operación.
+                var resultado = numero * contador;
+                //Guardamos todas la "sintaxis" de lo que mostraremos (+=) en texto con un <br/> para que se realice un salto de linea entre cada operación.
+                numeros += numero + " x " + contador + "= " + resultado + "<br/>";
+
+                /*También se puede usar el método "concat()" que combina dos o más cadenas de texto y devuelve una cadena nueva de todos los elementos.
+                En este caso tabién añadimos la multiplicaión que drá el resualtado en el propio elemento.
+                Se añade o suma automatícamente a lo que ya tenga de contenido no hace falta poner el "+=*/
+                numeros = numeros.concat(numero, " x ", contador, " = ", numero * contador, "<br/>");
+            }
+            //Mostramos la tabala.
+            mensaje.innerHTML = numeros;
+        }
+    </script>
+</body>
+
+</html>
