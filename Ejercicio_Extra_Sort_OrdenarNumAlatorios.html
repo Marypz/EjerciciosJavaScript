@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio Extra</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        h2{
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2>-Generar Y Ordenar 9 Números Aleatorios del 1-99-</h2>
+
+    <h3>Números Generados:</h3>
+    <div id="mensaje"></div><br>
+
+    <input type="button" id="botonOrdenar" onclick="ordenarNumerosSort()" value="Ordenar Números"><br><br>
+    <div id="mensajeOrdenado"></div>
+
+    <script type="text/javascript">
+        //Variables que contendrá los números y la longitud del array
+        var numAleatorios = [];
+        var tamArray = 9;
+
+        //Bucle que rellenará el array con números aleatorios del 1 al 99
+        for(i=0; i < tamArray; i++){
+            /*Math.random generará un número igual o mayor que 1 pero inferior a 99, usado esta fórmula:
+                Math.random() * (max - min) + min;
+            */
+            var numAlazar = Math.floor(Math.random() * (99 - 1) + 1);
+            numAleatorios.push(numAlazar);
+        }
+        //Mostrar los números generados en la página.
+        document.getElementById("mensaje").innerHTML = numAleatorios;
+
+        //Función que sirve para ordenar los números de menor a mayor
+        function ordenarNumerosSort(){
+            //Creo un nuevo array para hacer una "copia" los elementos organizados del array, pero se podría hacer con el original.
+            /*Para ordenar de menor a mayor con el sort es usa el "a-b", si fuera a la inversa "b-a"*/
+            /*var numOrdenados = numAleatorios.sort((a,b) => a - b );
+            document.getElementById("mensajeOrdenado").innerHTML = numOrdenados;*/
+
+            //Sin hacer la copia
+            numAleatorios.sort((a,b) => a - b );
+            document.getElementById("mensajeOrdenado").innerHTML = numAleatorios;
+        }
+    </script>
+</body>
+
+</html>

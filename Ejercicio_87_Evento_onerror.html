@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 87: Evento Extra onerror</title>
+    
+</head>
+
+<body>
+    <img id="imagen" src="KirbyKnife.png" alt="ImagenEjemplo">
+    
+    <script>
+        let imagen = document.getElementById('imagen');
+        imagen.onerror = function(){
+            console.error("Error al cargar la imagen");
+            imagen.src = 'pantallazo-azul.webp';
+        };
+    </script>
+</body>
+
+</html>

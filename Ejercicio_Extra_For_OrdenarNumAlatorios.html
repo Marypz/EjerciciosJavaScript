@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es-Es">
+
+<head>
+    <meta charset="UTF-8"> <!--"UTF-8 BOM"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio Extra</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        h2{
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2>-Generar Y Ordenar 9 Números Aleatorios del 1-99-</h2>
+
+    <h3>Números Generados:</h3>
+    <div id="mensaje"></div><br/>
+
+    <input type="button" id="botonOrdenar" onclick="ordenarBurbuja(numeros)" value="Ordenar Números"><br/><br/>
+    
+    <h3>Números Ordenados:</h3>
+    <div id="mensajeOrdenado"></div>
+
+    <script type="text/javascript">
+        //Variable vacía donde se guardarán todos los numeros aleatorios.
+        var numeros = [];
+        //Bucle for que llama a una función que genera un núm. entre 2 valores (min y max) y guarda el número en el array
+        for(i = 0; i < 9; i++){
+            var numAlazar = numeroAleatorio(1,99);
+            numeros.push(numAlazar);
+        }
+        //Mostrar los números generados en la página.
+        document.getElementById("mensaje").innerHTML = numeros;
+
+        /*SI QUISIERAMOS MOSTRARLO DIRECTAMENTE SIN BOTÓN:
+        ordenarBurbuja(numeros);*/
+
+        //Función que genera los números aleatorios con 2 valores y devuelve el número generado.
+        function numeroAleatorio(min,max){
+            var numAleatorio = Math.floor(Math.random() * (max - min) + min);
+            return numAleatorio;
+        }
+        //Función que ordenará el array de menor a mayor, hay que pasarle un array que usa como parámetro.
+        function ordenarBurbuja(arrayNum) {
+            //Primero guardamos la longitud del array que vamos a comprobar.
+            var longitudNumeros = arrayNum.length;
+            //Bucle que va rrecorrer cada elemento del array desde la posición 0 (i) hasta el penúltimo elemento (longitudNumeros -1)
+            //Se puede decir que este bucle controla la cantidad de "iteraciones" que va a realizar la función.
+            for (var i = 0; i < longitudNumeros - 1; i++) {
+                /*Creamos otro bucle que también va a recorrer el array.
+                    -Este segundo bucle avanza menos elementos para evitar que compare elementos que ya están en su posicón final.
+                */
+                for (var h = 0; h < longitudNumeros - i; h++) {
+                    //Miramos si el numero que estamos mirando (arrayNum[h]) es mayor que el siguiente [arrayNum h+1]
+                    if (arrayNum[h] > arrayNum[h + 1]) {
+                        //Si es mayor los intercambiamos de posición
+                        var intercambio = arrayNum[h];
+                        arrayNum[h] = arrayNum[h + 1];
+                        arrayNum[h + 1] = intercambio;
+                    }
+                }
+            }
+            //Mostrar el array ordenado en la página.
+            document.getElementById("mensajeOrdenado").innerHTML = arrayNum;
+        }
+
+        //MI PRIMER INTENTO FALLIDO :C
+        /*function ordenarBurbuja(arrayNum){
+            //Obtenemos la longitud del array que nos va a pasar en este caso el botón
+            var logitudNumeros = arrayNum.length;
+            for(i = 0; i < logitudNumeros-1 ;i++){
+                for(h= 0; h < logitudNumeros - i - 1; h++){ //h = arrayNum[h + 1]
+                    if(arrayNum[i] > arrayNum[h]){
+                        //var intercam = arrayNum[i];
+                        //arrayNum[i] = arrayNum[h];
+                        //arrayNum[h] = intercam;
+
+                        var intercambio = arrayNum[h];
+                        arrayNum[h] = arrayNum[h + 1];
+                        arrayNum[h + 1] = intercambio;
+                    }
+                }
+            }
+            //Mostrar el array ordenado en la página.
+            document.getElementById("mensajeOrdenado").innerHTML = arrayNum;
+        }*/
+
+    </script>
+</body>
+
+</html>
